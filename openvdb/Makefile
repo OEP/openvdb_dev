@@ -88,7 +88,7 @@ INSTALL_DIR := /usr/local
 BOOST_INCL_DIR := $(HT)/include
 
 # The parent directory of the OpenEXR/ header directory
-EXR_INCL_DIR := $(HT)/include
+EXR_INCL_DIR := $(HT)/include -I $(HT)/include/OpenEXR
 # The directory containing libIlmImf, libIlmThread, etc.
 EXR_LIB_DIR := $(HDSO)
 EXR_LIB := -lIlmImf -lIlmThread -lIex -lImath
