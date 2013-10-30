@@ -349,6 +349,9 @@ SOP_OpenVDB_Sample_Points::sample(OP_Context& context)
             gridName = ss.str();
         }
 
+        // remove any dot "." characters, attribute names can't contain this.
+        std::replace(gridName.begin(), gridName.end(), '.', '_');
+
         //convert gridName to uppercase so we can use it as a local variable name
         std::string gridVariableName = gridName;
         std::transform(gridVariableName.begin(), gridVariableName.end(),
